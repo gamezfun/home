@@ -1,118 +1,149 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" href="./assets/img/Storm Raiders.svg">
-<title>Storm Raiders - Sky Wars</title>
-<meta name="description" content="Storm Raiders is a lively, responsive gaming site featuring a speedy canvas runner.">
-<meta property="og:title" content="Storm Raiders - Sky Wars">
-<meta property="og:description" content="Jump into Desert Dash. Quick loading, mobile-first, no downloads required.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="./assets/img/Storm Raiders.svg">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Storm Raiders — Play Desert Dash">
-<meta name="twitter:description" content="A stylish browser runner with fluid controls.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GamezFun — Multiplayer Games, Honest Reviews & Tips</title>
+  <meta name="description" content="GamezFun: original reviews, tips, and multiplayer game guides from real players. Find the best games to play with friends." />
+  <link rel="icon" href="/assets/favicon.svg" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Basic styling (responsive, lightweight) -->
+  <style>
+    :root{
+      --bg:#0f172a; --card:#0b1220; --muted:#9aa4b2; --accent:#06b6d4;
+      --max:1100px; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#071024 0%, #081328 100%);color:#e6eef6;line-height:1.5}
+    .wrap{max-width:var(--max);margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#041022}
+    nav a{color:var(--muted);text-decoration:none;margin-left:12px;font-size:15px}
+    .hero{display:grid;grid-template-columns:1fr;gap:18px;margin:20px 0;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px}
+    .headline{font-size:20px;font-weight:700}
+    .sub{color:var(--muted);margin-top:6px}
+    .cta{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:8px;background:var(--accent);color:#041022;text-decoration:none;font-weight:600}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px}
+    .meta{color:var(--muted);font-size:13px}
+    img.resp{width:100%;height:auto;border-radius:8px;display:block;margin-top:12px}
+    footer{margin-top:32px;padding:18px 0;color:var(--muted);font-size:14px;border-top:1px solid rgba(255,255,255,0.03)}
+    @media (max-width:800px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+    }
+    /* marquee-like ticker */
+    .ticker{overflow:hidden;white-space:nowrap;border-radius:8px;padding:8px;background:linear-gradient(90deg,rgba(255,255,255,0.01),rgba(255,255,255,0.02));color:var(--muted);font-size:14px}
+    .ticker .inner{display:inline-block;padding-left:100%;animation:scroll 18s linear infinite}
+    @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+  </style>
+
+  <!-- Structured data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"GamezFun",
+    "url":"https://gamezfun.github.io/",
+    "description":"GamezFun — honest multiplayer game guides, reviews and tips from players.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"GamezFun"
+    }
+  }
+  </script>
 </head>
 <body>
-<nav class="nav">
-  <div class="container nav-inner">
-    <a class="logo" href="index.html" aria-label="Home"><img src="assets/img/Storm Raiders.svg" alt="Storm Raiders icon"><span>Storm Raiders</span></a>
-    <div class="menu" data-nav-menu>
-      <a href="index.html" style='opacity:1;font-weight:800'>Home</a>
-      <a href="game.html" >Play Game</a>
-      <a href="leaderboard.html" >Leaderboard</a>
-      <a href="about.html" >About</a>
-      <a href="blog.html" >Blog</a>
-      <a href="faq.html" >FAQ</a>
-      <a href="privacy.html" >Privacy</a>
-      <a href="terms.html" >Terms</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="right"><a class="btn ghost" data-nav-toggle>Menu</a><a class="btn" href="game.html">Play</a></div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="container grid">
-    <div>
-      <div class="badge">Roll • Climb • Triumph</div>
-      <h1>Sky Wars 3D — classic strategy reimagined for today.</h1>
-      <p>Step onto a vivid 3D board with animated ladders and cunning snakes for a seamless, interactive experience.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" href="game.html">Play in 3D</a>
-        <a class="btn ghost" href="blog.html">Explore Game Tips</a>
-      </div>
-      <div class="kudos">
-        <span class="pill">🎲 Timeless gameplay</span>
-        <span class="pill">🌐 Ready for multiplayer</span>
-        <span class="pill">🪜 Animated 3D board</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="grid-2">
-        <div class="card">
-          <div class="stat"><div class="n">3D</div><div class="t">Immersive Board</div></div>
-        </div>
-        <div class="card">
-          <div class="stat"><div class="n">0 deps</div><div class="t">Ultra-light Build</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<section class="section container">
-  <h2>Game Features</h2>
-  <div class="showcase">
-    <div class="tile">
-      <img src="assets/img/blob.svg" alt="" style="width:100%;height:100%;opacity:.6;object-fit:cover">
-      <div class="cap">3D Board</div>
-    </div>
-    <div class="tile">
-      <img src="assets/img/blob.svg" alt="" style="width:100%;height:100%;opacity:.6;object-fit:cover">
-      <div class="cap">Sky Wars</div>
-    </div>
-    <div class="tile">
-      <img src="assets/img/blob.svg" alt="" style="width:100%;height:100%;opacity:.6;object-fit:cover">
-      <div class="cap">Multiplayer Lobby</div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section container">
-  <div class="card">
-    <h2>Connect With Us</h2>
-    <p>Have feedback, suggestions, or new board ideas? We’d love to hear from you!</p>
-    <form id="contact-form" style="max-width:720px;margin:18px auto 0;text-align:left">
-      <div class="form-row">
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">GZ</div>
         <div>
-          <label>Name</label>
-          <input name="name" required placeholder="Player One">
-        </div>
-        <div>
-          <label>Email</label>
-          <input name="email" required type="email" placeholder="you@snakeladders3d.com">
+          <div style="font-weight:700;font-size:16px">GamezFun</div>
+          <div style="font-size:13px;color:var(--muted)">Real players • Real tips</div>
         </div>
       </div>
-      <div style="height:12px"></div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <!-- Running headlines / ticker -->
+    <div style="margin-top:14px" class="ticker" aria-hidden="true">
+      <div class="inner">Top pick: "Valiant Squad" — best for voice-chat squads • New review: "Star Racers" — casual 4-player fun • Guide: How to host a private lobby on mobile games — read now →</div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="main-heading">
       <div>
-        <label>Message</label>
-        <textarea name="message" rows="4" placeholder="Tell us your thoughts!"></textarea>
+        <h1 id="main-heading" class="headline">Multiplayer game guides, honest reviews, and quick tips — from real players.</h1>
+        <p class="sub">We test games on mobile and PC, publish short hands-on reviews, and share practical tips so you can find the best games to play with friends.</p>
+        <a class="cta" href="#latest">Read latest</a>
       </div>
-      <div style="height:18px"></div>
-      <button class="btn" type="submit">Send</button>
-    </form>
-  </div>
-</section>
+      <picture>
+        <source media="(max-width:600px)" srcset="/assets/hero-small.jpg">
+        <img src="/assets/hero.jpg" alt="Players enjoying multiplayer gaming" class="resp" />
+      </picture>
+    </section>
 
-<footer class="footer">
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <div>© 2025 Sky Wars 3D. All rights reserved.</div>
+    <!-- Featured posts -->
+    <section id="latest" style="margin-top:8px">
+      <h2 style="margin:0 0 12px 0">Latest posts</h2>
+      <div class="grid">
+        <article class="card" aria-labelledby="r1">
+          <h3 id="r1">Top 5 Multiplayer Games That Still Feel Fresh (2025)</h3>
+          <div class="meta">By GamezFun • Oct 10, 2025 • 420 words</div>
+          <p style="margin-top:8px;color:var(--muted)">
+            We spent three weeks testing free and paid multiplayer titles that are easy to pick up. Our favorites combine short match times, matchmaking that actually pairs friends, and strong social features. Below is a short summary of why each title made the list.
+          </p>
+          <ul style="color:var(--muted)">
+            <li><strong>Valiant Squad</strong> — best for small squads, strong voice chat.</li>
+            <li><strong>Star Racers</strong> — pick-up-and-play with cross-play support.</li>
+            <li><strong>CozyTown</strong> — casual cooperative puzzles for 2–4 players.</li>
+            <li><strong>Grid Royale</strong> — competitive but fair ranked matches.</li>
+            <li><strong>Hidden Clue</strong> — social deduction that scales well.</li>
+          </ul>
+          <img src="/assets/post1.jpg" alt="Screenshot showing Valiant Squad gameplay" class="resp" />
+        </article>
+
+        <article class="card" aria-labelledby="r2">
+          <h3 id="r2">How To Find Players to Play with — 7 practical tips</h3>
+          <div class="meta">By Asha (editor) • Sep 30, 2025 • 360 words</div>
+          <p style="margin-top:8px;color:var(--muted)">
+            From using community Discords to scheduling weekly game nights, these seven tips are what worked for our team. Short version: be specific about game and time, use squad-finder channels, and drop in voice first to reduce friction.
+          </p>
+          <img src="/assets/post2.jpg" alt="Friends playing on mobile together" class="resp" />
+        </article>
+      </div>
+    </section>
+
+    <!-- More content — why we're different -->
+    <section style="margin-top:18px" class="card">
+      <h3 style="margin:0 0 8px 0">Why GamezFun is different</h3>
+      <p style="color:var(--muted);margin:0">
+        We write short hands-on notes after playing each game for at least two sessions. Our reviews highlight what matters to friends who want to jump in together: match length, voice/chat support, controller support, and whether a private lobby is available. Everything here is written by real players — no automated summaries, no scraped lists.
+      </p>
+    </section>
+
+    <!-- Quick footer -->
+    <footer>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+          <div>© 2025 GamezFun — Built by gamers.</div>
+          <div style="color:var(--muted)"><a href="/terms.html" style="color:var(--muted);text-decoration:underline">Terms</a> • <a href="/privacy.html" style="color:var(--muted);text-decoration:underline">Privacy</a></div>
+        </div>
+        <div style="color:var(--muted);font-size:13px">
+          Tip: For Google Ads approval, replace images with original captures and connect a custom domain. See <a href="/about.html" style="color:var(--accent);text-decoration:none">About</a> for more.
+        </div>
+      </div>
+    </footer>
+
   </div>
-</footer>
-<div style="display:flex;gap:12px;align-items:center"><span class="badge">Responsive • Age-gate</span></div>
-</div></footer><script src="assets/js/main.js"></script></body></html>
+</body>
+</html>
